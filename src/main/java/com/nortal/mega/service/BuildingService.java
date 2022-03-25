@@ -2,6 +2,7 @@ package com.nortal.mega.service;
 
 import com.nortal.mega.persistence.BuildingDboMapper;
 import com.nortal.mega.persistence.BuildingRepository;
+import com.nortal.mega.persistence.entity.BuildingDbo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,7 @@ public class BuildingService {
         return buildingDboMapper.map(buildingRepository.findById(id).orElseThrow());
     }
 
-    public void save(Building building) {
+    public BuildingDbo save(Building building) {
+        return buildingRepository.save(buildingDboMapper.map(building));
     }
 }

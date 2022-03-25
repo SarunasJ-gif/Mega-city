@@ -12,6 +12,7 @@ import javax.persistence.*;
 public class BuildingDbo {
 
     @Id
+    @GeneratedValue()
     private Long id;
     @Column(name = "name")
     private String name;
@@ -19,10 +20,10 @@ public class BuildingDbo {
     private String address;
     @Column(name = "index")
     private String index;
-    @Column(name = "sector_code")
+    @Column(name = "sector_code", updatable = false)
     private String sectorCode;
     @Column(name = "energy_units")
     private Integer energyUnits;
-    @Column(name = "energy_unit_max")
+    @Column(name = "energy_unit_max", updatable = false)
     private Integer energyUnitMax;
 }

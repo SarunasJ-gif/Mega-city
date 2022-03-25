@@ -8,4 +8,8 @@ public interface BuildingDtoMapper {
 
     BuildingDto map(Building building);
     Building map(BuildingDto building);
+
+    Building save(BuildingDto building);
+
+
 }
